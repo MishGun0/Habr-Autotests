@@ -66,4 +66,3 @@ def check_empty_page_text(driver):
     empty_res_locator = By.CLASS_NAME, 'tm-empty-placeholder__text'
     empty_results = driver.find_element(*empty_res_locator)
     print(f'Text on page: {empty_results.text}')
-
