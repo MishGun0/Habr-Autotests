@@ -1,4 +1,4 @@
-from test_1 import *
+from page import *
 
 
 def test_empty_search(driver):
@@ -11,12 +11,6 @@ def test_empty_search(driver):
     count_articles_number(driver)
 
     check_empty_page_text(driver)
-
-
-def check_empty_page_text(driver):
-    empty_res_locator = By.CLASS_NAME, 'tm-empty-placeholder__text'
-    empty_results = driver.find_element(*empty_res_locator)
-    print(f'Text on page: {empty_results.text}')
 
 
 if __name__ == '__main__':
