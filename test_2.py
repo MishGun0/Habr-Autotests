@@ -1,14 +1,13 @@
 from page import *
 
 def test_empty_search(driver):
+    page = MainPage(driver)
+    page.open()
 
-    click_search_form(driver)
+    page = page.click_search()
 
-    type_text(driver, 'sdsfhthrth')
+    page.search('sdsfhthrth')
 
-    click_search_button(driver)
+    page.count_articles_number()
 
-    count_articles_number(driver)
-
-    check_empty_page_text(driver)
-
+    page.get_empty_page_text()

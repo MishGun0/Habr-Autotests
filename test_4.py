@@ -1,13 +1,12 @@
 from page import *
 
 def test_pagination_to_last_page(driver):
-    click_search_form(driver)
+    page = MainPage(driver)
+    page.open()
 
-    type_text(driver, 'Selenium')
+    page = page.click_search()
 
-    click_search_button(driver)
+    page.search('Selenium')
 
-    go_to_last_page(driver)
+    page.go_to_last_page()
 
-    import time
-    time.sleep(3)

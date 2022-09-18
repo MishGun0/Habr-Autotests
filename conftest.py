@@ -1,16 +1,11 @@
-import time
-
 import pytest
 from selenium.webdriver.chrome import webdriver
 
 
 def setup():
     print('set up')
+
     driver = webdriver.WebDriver('chromedriver')
-
-    driver.get('https://habr.com/ru/all/')
-
-    time.sleep(1)
 
     return driver
 
@@ -22,4 +17,8 @@ def tear_down(driver):
 
 @pytest.fixture
 def driver():
-    return setup()
+    obj = setup()
+
+    yield obj
+
+    tear_down(obj)
